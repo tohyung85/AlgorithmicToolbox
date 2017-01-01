@@ -3,7 +3,9 @@ import java.io.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GCD {
-    static int gcd(int a, int b) {
+    static int gcd(int a, int b) { // Euclidean Algorithm 
+        // gcd(a, b) = gcd(b, a') where a' = a % b
+        // => gcd(b, a') = gcd(a', b') where b' = b % a' on so on...
         if(b == 0) return a;
 
         int remainder = a % b;
