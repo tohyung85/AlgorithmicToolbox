@@ -1,5 +1,6 @@
 import java.util.*;
 import java.io.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MaxPairwiseProduct {
     static long getMaxPairwiseProduct(int[] numbers) {
@@ -44,6 +45,34 @@ public class MaxPairwiseProduct {
             numbers[i] = scanner.nextInt();
         }
         System.out.println(getMaxPairwiseProductFast(numbers));
+        
+        // Stress Testing....
+        /*
+        while(true) {
+            int min = 2;
+            int max = 11;
+            int n = ThreadLocalRandom.current().nextInt(min, max + 1);
+
+            int[] numberArr = new int[n];
+            for(int i = 0; i < n; i++) {
+                int randomNumber = ThreadLocalRandom.current().nextInt(0, 11);
+                numberArr[i] = randomNumber;
+            }
+            long result1 = getMaxPairwiseProduct(numberArr);
+            long result2 = getMaxPairwiseProductFast(numberArr);
+            if(result1 != result2) {
+                for(int i = 0; i < n; i++) {
+                    System.out.print(numberArr[i] + " ");
+                }
+                System.out.print("\n");
+                System.out.println("Results not equal: " + result1 + " vs "+ result2);
+                break;
+            } else {
+                System.out.println("OK!");
+            }
+        }
+        */
+
     }
 
     static class FastScanner {
