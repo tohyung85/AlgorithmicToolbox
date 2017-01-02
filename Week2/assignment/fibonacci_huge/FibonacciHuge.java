@@ -18,6 +18,25 @@ public class FibonacciHuge {
 
         return current % m;
     }
+
+
+    private static void stressTest() { // Stress Testing only
+      while(true) {
+          int randomNum1 = ThreadLocalRandom.current().nextInt(0, 1000);
+          int randomNum2 = ThreadLocalRandom.current().nextInt(0, 1000);
+          long result1 = getFibonacciHugeNaive(randomNum1, randomNum2);
+          long result2 = getFibbonacciHuge(randomNum1, randomNum2);
+
+          if(result1 != result2) {
+              System.out.println("Answers not equal!");
+              System.out.println("Inputs: " + randomNum1 + " " + randomNum2);
+              System.out.println("Result1: " + result1 + " vs " + result2);
+              break;
+          } else {
+              System.out.println("OK!");
+          }
+      }
+    }     
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
