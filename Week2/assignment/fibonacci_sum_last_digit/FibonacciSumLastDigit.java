@@ -22,10 +22,6 @@ public class FibonacciSumLastDigit {
 
     private static long getFibonacciSum(long n) {
         if(n <= 1) return n;
-        
-        long prev = 0;
-        long curr = 1;
-        long length = 0;
 
         int[] fibSumsLastDigits = new int[60]; // Pisano Period Size is 60 for modulo 10(last digit), see commented loop below.
         fibSumsLastDigits[0] = 0;
