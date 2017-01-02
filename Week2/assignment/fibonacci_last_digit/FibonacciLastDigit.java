@@ -32,7 +32,7 @@ public class FibonacciLastDigit {
         return fibLastDigits[n];
     }
 
-    private static void stressTest(int n) { // Stress Testing only
+    private static void stressTest() { // Stress Testing only
         while(true) {
             int randomNum = ThreadLocalRandom.current().nextInt(0, 15);
             long result1 = getFibonacciLastDigitNaiveSlow(randomNum);
